@@ -1,0 +1,329 @@
+/*   
+Nuestra hoja de estilos principal
+@author Borja
+@version 1.0
+@date 2019 06 27
+
+
+0. Reset - resetear estilos al del user-agent
+1. Animaciones o @KeyFrames
+2. Etiquetas - dar estilos base a todos los tags
+3. Clases comunes
+4. Layouts -  secciones de la web (cabecera, menus, pies, etc...)
+5. Media Query para RWD (Responsive Web Design)
+
+*/
+
+
+
+
+
+/*0. Reset - resetear estilos al del user-agent 
+*******************************************************************************/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*1. Animaciones o @KeyFrames 
+*******************************************************************************/
+@keyframes pulse {
+  0% { 
+	  transform: scale(1);
+	  color: #f98585;
+  } 
+  100% { 
+	  transform: scale(1.5);
+	  color: #f59707; 
+  }
+}
+/*2. Etiquetas 
+*******************************************************************************/
+body {
+	color: #212529;
+	text-align: left;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, Noto Sans, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-transform:capitalize;
+	margin-bottom: 16px;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+h1 {
+	color: #438000;
+	
+	font-size: 1.5em;
+}
+
+a {
+	color: #0358d8;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #d86c5c;
+}
+
+code {
+	border-radius: 2px;
+	padding: 1px 2px;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+p {
+	text-align:left;
+	margin-bottom:1em;
+}
+
+p a {
+	text-decoration: underline;
+}
+
+ol, ul {
+	list-style-type: none;
+}
+
+label{
+color:#003580;
+margin-right:15px;
+
+
+}
+
+label:after{
+	content:":";
+
+}
+
+label.obligatorio:before{
+		content:"(*)";
+}
+
+input[type="text"],input[type="number"],input[type="email"]{
+border:none;
+border-bottom:2px solid #003580;
+padding: 5px 10px;
+}
+
+
+input[type="text"]:focus,input[type="number"]:focus,input[type="email"]:focus{
+font-size: 1.6em;
+color:#003580;
+} 
+
+input[type="text"]:invalid,input[type="number"]:invalid,input[type="email"]:invalid{
+color:#f96500;
+}
+
+input[type="text"]:valid,input[type="number"]:valid,input[type="email"]:valid{
+
+color:#0358d8;
+}
+ 
+select{
+border:none;
+border-bottom:2px solid #003580;
+padding: 5px 10px;
+}
+ 
+select option{
+border:none;
+padding: 5px 10px;
+}
+
+input[type="submit"], input[type="reset"]{
+background-color:#003580;
+color:#FFF;
+border-radius:10px;
+border:none;
+padding:5px 15px;
+margin-top:20px;
+}
+
+input[type="submit"]:hover{
+background-color:#0035d8;
+color:#FFF;
+border-radius:10px;
+padding:5px 15px;
+margin-top:20px;
+}
+
+
+input[type="reset"]{
+background-color:#f9ae00;
+}
+
+input[type="reset"]:hover{
+background-color:#f96500;
+}
+
+
+
+/*3.
+******************************************************************************/
+.active {
+	background: #003580;
+	border-radius: 2px;
+	color: #FFF !important;
+	padding: 3px 8px;
+}
+
+
+
+/* 4. Layouts 
+*****************************************************************************/
+.content {
+	max-width: 1024px;
+	margin: auto;
+}
+
+main.content {
+	margin-top: 100px;
+	margin-bottom: 150px;
+	min-height: 175px;
+		
+}
+
+header#principal {
+	background: #003580;
+	padding: 15px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 30px;
+	z-index:99;
+}
+
+header#principal h1 a {
+	color: #FFF;
+	margin: auto;
+}
+
+nav#menu {
+	background: #f7f7f7;
+	border-bottom: 1px solid #dee0e2;
+	position: fixed;
+	top: 60px;
+	width: 100%; 
+	padding-top: 8px;
+	z-index:100;
+}
+
+#menu>ul {
+	
+	max-width:1024px;
+	margin: auto;
+	height: 27px;
+	list-style: none;
+	padding-top: 5px;
+}
+#menu ul{
+	display:flex;
+	/*flex-direction: row;*/
+justify-content: space-around;
+}
+
+nav#menu>ul>li {
+	
+	padding: 0;
+	font-size: 12px;
+	font-weight: 700;
+	margin-right: 2px;
+	text-transform: uppercase;
+}
+
+nav#menu>ul>li>a {
+	padding-top: 5px;
+	color: #003580;
+}
+
+nav#menu>ul>li>a:hover {
+	padding-top: 5px;
+	color: silver;
+}
+
+
+nav#menuservlet {
+	padding-top: 10px;
+}
+
+footer {
+	background-color: #DDD;
+	margin-top:30px;
+	padding: 8px 0 5px 25px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	box-sizing: border-box;
+}
+ 
+.copy {
+	float: left;
+	padding-top: 5px;	
+}
+
+.boton i{
+	position:fixed;
+	right:0.5em;
+	bottom:1.5em;
+	color: #003580;
+	padding-top:5px;
+	float:right;
+	text-shadow: 0px 5px 10px black;
+}
+
+.social {
+	float: right;
+	margin: auto;
+}
+
+.text-danger {
+	color: red;
+}
+
+
+
+/* 5. Media Query para  RWD
+/*****************************************************************/
+@media(max-width:425px), (max-width:1024px) and (orientation:landscape) {
+   
+footer {
+	position:relative;
+
+}
+
+.boton i{
+	    right: 0.3em;
+	    bottom:1em;
+		z-index:2;
+}
+
+main.content{
+	   padding: 0.5em;
+}
+
+.social{
+	    padding-right: 10px;
+}
+
+.clearfix{
+overflow:auto;
+}
+
+#video{
+width:360px;
+height: 200px;
+}
+
+
+
+
+}
